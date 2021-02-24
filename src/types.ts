@@ -1,4 +1,6 @@
-export type GenericObject { [key: string]: any };
+export interface GenericObject {
+  [key: string]: any;
+}
 
 export type Callback<T, U> = (
   value: T & [string, any],
