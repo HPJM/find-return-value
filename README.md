@@ -23,7 +23,7 @@ import { findValue } from "find-return-value";
 
 const object = { truthy: 1, falsy: 0 };
 
-findValue(object, ([key, value]) => {
+findValue(object, ([key, value], { defaultValue: "none" }) => {
   if (value) {
     return key;
   }
@@ -33,7 +33,8 @@ findValue(object, ([key, value]) => {
 ## Reference
 
 ```js
-findValue(arrayOrObject, callback, thisArg, defaultValue);
+const options = { thisArg, defaultValue };
+findValue(arrayOrObject, callback, options);
 ```
 
 - `arrayOrObject: T[]` - the array or object to iterate over
